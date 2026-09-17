@@ -34,10 +34,10 @@ public class Mascota {
     // Cada mascota pertenece a un dueño
     @ManyToOne
     @JoinColumn(name = "dueno_id", nullable = false)
-    @JsonIgnore
     private Dueno dueno;
 
     // Una mascota tiene muchas citas
+    @JsonIgnore
     @OneToMany(mappedBy = "mascota", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Cita> citas = new ArrayList<>();
 }

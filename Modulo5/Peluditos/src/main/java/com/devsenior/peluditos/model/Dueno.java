@@ -1,5 +1,6 @@
 package com.devsenior.peluditos.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -33,6 +34,7 @@ public class Dueno {
     private String email;
 
     // Un dueño tiene muchas mascotas
+    @JsonIgnore
     @OneToMany(mappedBy = "dueno", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Mascota> mascotas = new ArrayList<>();
 }
