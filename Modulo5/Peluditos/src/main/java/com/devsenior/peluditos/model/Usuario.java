@@ -24,6 +24,9 @@ public class Usuario {
     @Column(nullable = false)
     private String password;
 
+    // Nombre para mostrar en la app (ej: "Laura Gómez")
+    private String nombre;
+
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private Rol rol;

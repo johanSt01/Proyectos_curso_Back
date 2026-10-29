@@ -30,6 +30,12 @@ public class Veterinario {
     @Column(unique = true)
     private String tarjetaProfesional;
 
+    // Cuenta con la que este veterinario inicia sesion (puede no tener)
+    @OneToOne
+    @JoinColumn(name = "usuario_id", unique = true)
+    @JsonIgnore
+    private Usuario usuario;
+
     // Un veterinario atiende muchas citas
     @OneToMany(mappedBy = "veterinario")
     @JsonIgnore
